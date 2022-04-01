@@ -3,7 +3,7 @@ Chiedere all’utente di inserire una parola Creare una funzione per capire se l
 
 //creo la funzione
 
-
+/* 
  function palindromValidator ( word ) 
  {
 
@@ -32,6 +32,8 @@ Chiedere all’utente di inserire una parola Creare una funzione per capire se l
 
      console.log('la parola NON è palindroma')
  }
+ */
+
 
  /* 
  
@@ -43,3 +45,50 @@ Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione)
 Dichiariamo chi ha vinto.
 
 */
+
+function getRandomNumber(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+function isEven(integer) {
+
+    if (integer % 2 == 0){
+        
+        return true;
+
+    }
+
+     return false;
+
+}
+
+let userEvenOddChoice = prompt('Scegli se pari o dispari');
+let userNumber = parseInt(prompt('Scegli un numero da 1 a 5'));
+let pcNumber = getRandomNumber(1, 5);
+
+let sum = userNumber + pcNumber;
+
+console.log('Il pc ha tirato');
+console.log(pcNumber);
+
+console.log('Il Giocatore ha tirato');
+console.log(userNumber);
+
+console.log('Ecco il risultato');
+console.log(sum);
+
+
+if ((isEven(sum)) || (userEvenOddChoice == 'pari')) {
+
+    console.log('hai vinto tu')
+
+} else if ((isEven(sum) == false) || (userEvenOddChoice == 'dispari' )){
+
+    console.log('hai vinto tu')
+
+} else {
+
+    console.log('ha vinto il computer')
+}
